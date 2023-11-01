@@ -8,9 +8,21 @@
   )
 ```
 
+```
+create table test_order_num (
+  store_id int not null,
+  order_number int not null,
+  primary key (store_id, order_number)
+);
+```
+
 # Benchmarks:
 
 This benchmarks were produced running on localhost (no network latency), using a single thread for processing the requests
+
+```
+ab -n 1000 -c 3 http://localhost:8989/nextOrderNumber/13
+```
 
 ```
 Finished 1000 requests
